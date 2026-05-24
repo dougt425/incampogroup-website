@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InCampo Group | From the field to the fork</title>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <meta name="msapplication-TileColor" content="#1E2B1F">
+  <meta name="theme-color" content="#1E2B1F">
+
+  <meta name="description" content="InCampo builds technology for people who care where food comes from. Real data. Real experience. Real food.">
+  <meta property="og:title" content="InCampo Group | From the field to the fork">
+  <meta property="og:description" content="InCampo builds technology for people who care where food comes from.">
+  <meta property="og:image" content="https://www.incampogroup.com/icon-512x512.png">
+  <meta property="og:url" content="https://www.incampogroup.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --color-forest: #1E2B1F;
+      --color-brown: #3A2A1A;
+      --color-offwhite: #FDFBF7;
+      --color-neon: #8FE388;
+      --color-tan: #B8A692;
+      --color-muted-green: #2D4A2E;
+      --radius: 12px;
+      --max-width: 1200px;
+      --transition: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--color-offwhite);
+      color: var(--color-forest);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; transition: var(--transition); }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      border: none;
+      line-height: 1.2;
+    }
+
+    .btn-primary {
+      background-color: var(--color-muted-green);
+      color: var(--color-neon);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(45, 74, 46, 0.3);
+      filter: brightness(1.1);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-neon);
+      border: 2px solid var(--color-neon);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-neon);
+      color: var(--color-brown);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(143, 227, 136, 0.25);
+    }
+
+    /* Header */
+    header {
+      background-color: var(--color-forest);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-wrap img {
+      height: 48px;
+      width: auto;
+    }
+
+    .logo-text {
+      color: var(--color-offwhite);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-link {
+      color: var(--color-tan);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .nav-link:hover { color: var(--color-neon); }
+
+    /* Hero */
+    .hero {
+      background-color: var(--color-forest);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(184,166,146,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,166,146,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      color: var(--color-offwhite);
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .hero .subhead {
+      color: var(--color-tan);
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Ecosystem */
+    .ecosystem {
+      background-color: var(--color-offwhite);
+      padding: 80px 0;
+    }
+
+    .section-title {
+      color: var(--color-forest);
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 56px;
+      letter-spacing: -0.5px;
+    }
+
+    .cards-wrap {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      flex: 1 1 320px;
+      max-width: 560px;
+      box-shadow: 0 4px 24px rgba(30,43,31,0.06);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(30,43,31,0.12);
+      transform: translateY(-4px);
+    }
+
+    .card-icon { width: 48px; height: 48px; margin-bottom: 24px; }
+
+    .card h3 {
+      color: var(--color-forest);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .card .brand-suffix {
+      color: var(--color-tan);
+      font-size: 16px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      color: var(--color-forest);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      opacity: 0.85;
+    }
+
+    /* Philosophy */
+    .philosophy {
+      background-color: var(--color-offwhite);
+      padding: 80px 0 40px;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .philosophy-item h4 {
+      color: var(--color-brown);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .philosophy-item p {
+      color: var(--color-forest);
+      font-size: 16px;
+      opacity: 0.85;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background-color: var(--color-brown);
+      padding: 60px 24px;
+      text-align: center;
+      margin: 80px 0 0;
+    }
+
+    .cta-banner h3 {
+      color: var(--color-offwhite);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      letter-spacing: -0.3px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-forest);
+      color: var(--color-tan);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--color-neon); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { padding: 64px 0; }
+      .hero h1 { font-size: 36px; }
+      .hero .subhead { font-size: 18px; }
+      .section-title { font-size: 30px; margin-bottom: 40px; }
+      .cards-wrap { gap: 24px; }
+      .card { padding: 28px; flex: 1 1 100%; }
+      .card h3 { font-size: 24px; }
+      .philosophy { padding: 64px 0 32px; }
+      .philosophy-grid { grid-template-columns: 1fr; gap: 36px; }
+      .cta-banner { padding: 48px 24px; margin: 64px 0 0; }
+      .cta-banner h3 { font-size: 26px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons .btn { width: 100%; max-width: 320px; }
+      .logo-text { font-size: 20px; }
+      .ecosystem, .philosophy { padding: 64px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .hero h1 { font-size: 32px; }
+      .hero .subhead { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo-wrap">
+          <img src="/InCampoGroup-logo-no-text.png" alt="InCampo Group" height="48">
+          <span class="logo-text">InCampo Group</span>
+        </div>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>From the field to the fork.</h1>
+        <p class="subhead">InCampo builds technology for people who care where food comes from. Real data. Real experience. Real food.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ecosystem">
+    <div class="container">
+      <h2 class="section-title">Our Ecosystem</h2>
+      <div class="cards-wrap">
+
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#2D4A2E" stroke-width="3"/>
+            <path d="M24 8C24 8 14 18 14 26C14 31.5 18.5 36 24 36C29.5 36 34 31.5 34 26C34 18 24 8 24 8Z" fill="#2D4A2E" fill-opacity="0.2" stroke="#2D4A2E" stroke-width="2.5"/>
+            <line x1="24" y1="36" x2="24" y2="14" stroke="#2D4A2E" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3>Garden Intelligence</h3>
+          <span class="brand-suffix">by InCampo</span>
+          <p>Know your garden. Sensors, cameras, and AI monitor soil, weather, and plant health — then tell you exactly what your garden needs today.</p>
+          <a href="https://garden.incampogroup.com" class="btn btn-primary">Open Garden Intelligence</a>
+        </div>
+
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4V20M24 4V20M32 4V20M12 20H36C36 31.0457 27.0457 40 16 40H16C4.9543 40 12 31.0457 12 20Z" stroke="#2D4A2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 28H36" stroke="#2D4A2E" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h3>A Bent Fork</h3>
+          <span class="brand-suffix">by InCampo</span>
+          <p>Cook what you grow. Our family cookbook, field-tested in Kirkland for 20+ years. Seasonal recipes, kitchen-tested techniques, and gear we actually use.</p>
+          <a href="https://abentfork.incampogroup.com" class="btn btn-primary">Visit A Bent Fork</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="container">
+      <h2 class="section-title">In Campo means in the field</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <h4>Real Data</h4>
+          <p>We measure what matters: soil moisture, canopy temperature, light levels, and harvest timing. No guesswork. Just actionable insights from your actual garden.</p>
+        </div>
+        <div class="philosophy-item">
+          <h4>Real Experience</h4>
+          <p>Built on 20+ years of growing food and cooking it daily. Every feature comes from working the soil and standing at the stove — tested by real people.</p>
+        </div>
+        <div class="philosophy-item">
+          <h4>Real Food</h4>
+          <p>From seed to plate, we help you grow nutrient-dense food and cook it well. Because the best meals start with ingredients you know and trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h3>Start with your garden, or start with dinner.</h3>
+      <div class="cta-buttons">
+        <a href="https://garden.incampogroup.com" class="btn btn-outline">Explore Garden Intelligence</a>
+        <a href="https://abentfork.incampogroup.com" class="btn btn-outline">Browse Recipes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:hello@incampogroup.com">Contact</a>
+      </div>
+      <p>© 2026 InCampo Group, LLC · Kirkland, WA</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
